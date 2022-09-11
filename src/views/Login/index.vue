@@ -105,8 +105,8 @@ export default {
         this.$toast.success('发送验证码成功')
       } catch (err) {
         if (
-          (err.response && err.response.status === 429) ||
-          err.response.status === 404
+          err.response &&
+          (err.response.status === 429 || err.response.status === 404)
         ) {
           // axios错误
           this.$toast.fail(err.response.data.message)
