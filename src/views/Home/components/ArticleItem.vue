@@ -24,12 +24,14 @@
           height="100"
           :src="item"
         />
+        <p>{{ label }}</p>
       </template>
     </van-cell>
   </div>
 </template>
 
 <script>
+import dayjs from '@/utils/dayjs'
 export default {
   props: {
     article: {
@@ -40,8 +42,8 @@ export default {
   computed: {
     /*eslint-disable */
     label() {
-      const { aut_name, comm_count, pudate } = this.article
-      return `${aut_name}${comm_count}评论${pudate}`
+      const { aut_name, comm_count, pubdate } = this.article
+      return `${aut_name}${comm_count}评论${dayjs(pubdate).fromNow()}`
     }
   }
 }
