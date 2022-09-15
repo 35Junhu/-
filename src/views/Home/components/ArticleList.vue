@@ -98,20 +98,21 @@ export default {
 </script>
 
 <style scoped lang="less">
-  // 如何给盒子拥有自己的滚动条
-  // - 1.定高 2.overflow:auto/scroll/overlay
-  .article {
-    height: calc(100vh - 92px - 83px - 100px);
-    overflow: auto;
-    // &: 代表当前元素他爹
-    // ::-webkit-scrollbar : 滚动槽
-    // ::-webkit-scrollbar-thumb: 滚动的滑块
-    &::-webkit-scrollbar {
-      width: 10px;
-      background-color: transparent;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: #3296fa;
-      border-radius: 10px;
-    }
+// 如何给盒子拥有自己的滚动条
+// - 1.定高 2.overflow:auto/scroll/overlay
+.article {
+  height: calc(100vh - 92px - 83px - 100px);
+  overflow: auto;
+  // &: 代表当前元素他爹
+  // ::-webkit-scrollbar : 滚动槽
+  // ::-webkit-scrollbar-thumb: 滚动的滑块
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
   }
+  &::-webkit-scrollbar-thumb {
+    background-color: #3296fa;
+    border-radius: 10px;
+  }
+}
+</style>

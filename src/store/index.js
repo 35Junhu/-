@@ -9,14 +9,15 @@ export default new Vuex.Store({
       key: 'HEIMA_TOUTIAO',
       // storage:window.sessionStorage,
       reducer(state) {
-        const { tokenObj, myChannels } = state
-        return { tokenObj, myChannels }
+        const { tokenObj, myChannels, histories } = state
+        return { tokenObj, myChannels, histories }
       }
     })
   ],
   state: {
     tokenObj: {},
-    myChannels: []
+    myChannels: [],
+    histories: []
   },
   getters: {
     isLogin(state) {
@@ -29,6 +30,13 @@ export default new Vuex.Store({
     },
     SET_MY_CHANNELS(state, channels) {
       state.myChannels = channels
+    },
+    /**
+     *
+     * @param {*} histories 添加或者修改后的新的历史数据
+     */
+    SET_HISTORIES(state, histories) {
+      state.histories = histories
     }
   }
 })
